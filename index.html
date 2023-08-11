@@ -1,0 +1,39 @@
+<!doctype html>
+<HTML>
+<HEAD>
+<TITLE>난수생성기</TITLE>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="viewport" content="viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<link rel="apple-touch-icon-precomposed" href=".png">
+</HEAD>
+<BODY>
+<CENTER>
+	<table border="1">
+	<tr><td align="center" style="font-size: 40px">~까지</td></tr>
+	<tr>
+		<td><input id="max" name="inputmax" maxlength="2" type="text" placeholder="최댓값" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"  style="background-color: #e2e2e2; text-align: center; width:400px; height: 90px; font-size: 54px"/></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<button id="create"  maxlength="10" type="button" style="width: 200px;height: 80px;font-size: 45px">생성</button>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center" style="height: 30px "><span id="result" style="font-size: 60pt ;font-weight:bold"></span></td>
+	</tr>
+	</table>
+	</CENTER>
+
+	<script>
+		document.getElementById("create").addEventListener("click", generateRnd);
+		function generateRnd() {
+		var min = 1;
+		var max = document.getElementById("max").value;
+		document.getElementById("result").innerHTML = Math.floor(Math.random() * (max-min+1))+Number(min);		
+		}
+	</script>
+
+
+</BODY>
+</HTML>
